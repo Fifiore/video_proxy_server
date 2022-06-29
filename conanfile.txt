@@ -1,0 +1,17 @@
+[requires]
+boost/1.79.0
+gtest/cci.20210126
+openssl/3.0.3
+ 
+[generators]
+CMakeDeps
+CMakeToolchain
+
+[options]
+OpenSSL:shared=False
+
+[imports]
+bin, *.dll -> ./bin # Copies all dll files from packages bin folder to my "bin" folder
+lib, *.dylib* -> ./bin # Copies all dylib files from packages lib folder to my "bin" folder
+lib, *.so* -> ./bin
+
