@@ -88,10 +88,7 @@ namespace parser {
       new_response{ response.result(), response.version()};
 
     for (auto& field : response.base()) {
-      auto it = response.find(field.name());
-      if (it != response.end()) {
-        new_response.set(field.name(), it->value());
-      }
+      new_response.set(field.name(), field.value());
     }
     new_response.body() = generate_manifest_response_body(response, protocol, proxy_host_port);
     new_response.prepare_payload();

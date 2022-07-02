@@ -74,7 +74,6 @@ namespace video_proxy {
       error_message(error_code);
     }
 
-    // We want to keep the first error
     socket.shutdown(boost::asio::ip::tcp::socket::shutdown_send, error_code);
     if (error_code) {
       error_message(error_code);

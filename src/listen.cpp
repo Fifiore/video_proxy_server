@@ -31,7 +31,7 @@ namespace video_proxy {
     }
     else {
       while (true) {
-        // To receive the connection
+        // To accept the connection
         boost::asio::ip::tcp::socket socket{ server_data.m_io_context };
         acceptor.async_accept(socket, yield[error_code]);
 
